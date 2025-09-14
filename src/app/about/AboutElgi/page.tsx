@@ -102,7 +102,7 @@ const AboutElgi = () => {
                     imparting high-quality education through improving oneself and the nation at large. Through 
                     well-organized packages, we are successful in providing standard education to the students. 
                     Providing trustworthy services with minimum expense was always our trademark. We worked to 
-                    enlighten our students' lives by making valuable contributions to their academic, and 
+                    enlighten our students&apos; lives by making valuable contributions to their academic, and 
                     non-academic side by providing assistance in their studies, getting better placements, and 
                     overall bringing them as useful citizens to the nation.
                   </p>
@@ -143,7 +143,7 @@ const AboutElgi = () => {
                     well-organized packages, we are successful in providing standard education to the students.
                   </p>
                   <p className="mb-3">
-                    ENLIGHT GROUP OF INSTITUTION Develops, Supports, Represents & Educates Professional Health Care...
+                    ENLIGHT GROUP OF INSTITUTION Develops, Supports, Represents &amp; Educates Professional Health Care...
                   </p>
                   <p className="mb-3">
                     Long a national leader in nursing education with a firm commitment to clinical excellence, 
@@ -230,7 +230,7 @@ const AboutElgi = () => {
               <div className="aboutarea__5__img sp_top_90" data-tilt>
                 <Image
                   src="/assets/img/about/about-3.jpg"
-                  alt="Mission & Vision"
+                  alt="Mission &amp; Vision"
                   width={600}
                   height={500}
                   className="img-fluid"

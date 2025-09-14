@@ -89,7 +89,7 @@ const ChairmanMessage = () => {
                   </p>
 
                   <p className="mb-4" style={{ lineHeight: '1.8', fontSize: '16px' }}>
-                    It is a challenge to the society to provide a sound foundation to students' community by comprehensive 
+                    It is a challenge to the society to provide a sound foundation to students&apos; community by comprehensive 
                     technical education in our Modern society.
                   </p>
 

@@ -61,10 +61,10 @@ const Header = () => {
       name: 'Institutions',
       path: '#',
       submenu: [
-        { name: 'Sowrabha Institute of Nursing Sciences', path: 'school/SowrabhaInstitute' },
-        { name: 'Enlight Institute of Para Medical Sciences', path: 'school/EnlightInstitute' },
-        { name: 'Enlight School of Nursing', path: 'school/EnlightSchool' },
-        { name: 'Sri Shantidhama School of Nursing', path: 'school/SantidhamaSchool' }
+        { name: 'Sowrabha Institute of Nursing Sciences', path: '/Institutions/SowrabhaInstitute' },
+        { name: 'Enlight Institute of Para Medical Sciences', path: '/Institutions/EnlightInstitute' },
+        { name: 'Enlight School of Nursing', path: '/Institutions/EnlightSchool' },
+        { name: 'Sri Shantidhama School of Nursing', path: '/Institutions/SantidhamaSchool' }
       ]
     },
     {
