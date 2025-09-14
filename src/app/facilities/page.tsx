@@ -1,7 +1,7 @@
-// app/facilities/page.tsx
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { Metadata } from 'next';
 
 interface Facility {
   id: number;
@@ -67,12 +67,7 @@ const facilities: Facility[] = [
   }
 ];
 
-export const metadata: Metadata = {
-  title: "Our Facilities - Enlight Group of Institutions",
-  description: "Explore the state-of-the-art facilities at Enlight Group of Institutions including modern labs, library, transport, and more.",
-};
-
-export default function Facilities() {
+const Facilities = () => {
   return (
     <>
       {/* Breadcrumb Section */}
@@ -252,3 +247,5 @@ export default function Facilities() {
     </>
   );
 }
+
+export default Facilities;
