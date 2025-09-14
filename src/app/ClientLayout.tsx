@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 
 // Dynamically import components with no SSR
 const Preloader = dynamic(() => import('./components/Preloader'), { ssr: false });
-// const TopBar = dynamic(() => import('./components/TopBar'), { ssr: false });
 const Header = dynamic(() => import('./components/Header'), { ssr: false });
 const MobileMenu = dynamic(() => import('./components/MobileMenu'), { ssr: false });
 
@@ -66,7 +66,6 @@ export default function ClientLayout({
       <Preloader isLoading={isLoading} />
       
       <main className="main_wrapper overflow-hidden" style={{ display: isLoading ? 'none' : 'block' }}>
-        {/* <TopBar /> */}
         <Header onMenuToggle={toggleMobileMenu} />
         
         {/* Mobile Menu */}
@@ -82,7 +81,7 @@ export default function ClientLayout({
           {children}
         </div>
 
-        {/* Footer section start */}
+        {/* Footer section */}
         <div className="footerarea">
           <div className="container">
             <div className="footerarea__newsletter__wraper">
@@ -97,7 +96,7 @@ export default function ClientLayout({
                     <div className="footerarea__newsletter__input">
                       <form action="#">
                         <div className="footerarea__newsletter__button text-sm-end text-start">
-                          <a target="_blank" href="" type="submit" className="subscribe__btn">Apply Now</a>
+                          <Link href="/apply" className="subscribe__btn">Apply Now</Link>
                         </div>
                       </form>
                     </div>
