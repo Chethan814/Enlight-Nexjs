@@ -1,43 +1,151 @@
-import React from 'react'
-import Image from 'next/image'
+// components/HeroBanner.tsx
+'use client';
 
-export default function HeroBanner() {
+import { useState, useRef } from 'react';
+import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Thumbs, Autoplay, EffectFade } from 'swiper/modules';
+import { Swiper as SwiperType } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/thumbs';
+import 'swiper/css/effect-fade';
+
+const HeroBanner = () => {
+  const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+
+  const slides = [
+    {
+      id: 1,
+      bgImage: '/assets/img/1-updated-images/Hero-Section/Hero-section-slider-1.jpg',
+      title: 'Direct Admission For Nursing <span>and</span> Paramedical',
+      buttonText: 'Enquiry Now',
+      buttonLink: 'https://enlight-enquiry-form.vercel.app',
+      thumb: '/assets/img/herobanner/bg-1.jpg'
+    },
+    {
+      id: 2,
+      bgImage: '/assets/img/1-updated-images/Hero-Section/Hero-section-slider-2.jpg',
+      title: 'Direct Nursing Admission For <span>B.Sc. Nursing</span> & <span>GNM</span> Courses Eligibility',
+      buttonText: 'Enquiry Now',
+      buttonLink: 'https://enlight-enquiry-form.vercel.app',
+      thumb: '/assets/img/herobanner/bg-2.jpg'
+    },
+    {
+      id: 3,
+      bgImage: '/assets/img/1-updated-images/Hero-Section/Hero-section-slider-3.jpg',
+      title: 'Direct Admission For Nursing <span>and</span> Paramedical',
+      buttonText: 'Enquiry Now',
+      buttonLink: 'https://enlight-enquiry-form.vercel.app',
+      thumb: '/assets/img/herobanner/bg-3.jpg'
+    }
+  ];
+
   return (
-    <div className="herobannerarea__content">
-      <div className="container">
-        <div className="row align-items-center">
-          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-            <div className="herobannerarea__text">
-              <h1>
-                Welcome to <span className="text-primary">Enlight Group of Institutions</span>
-              </h1>
-              <p>
-                Explore, Enrich and Evolve with our trusted nursing and paramedical programs. Admission open for 2025-2026!
-              </p>
-              <a
-                href="https://enlight-admission-form.vercel.app"
-                className="default__button"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Apply online for admission"
-              >
-                Apply Online
-              </a>
+    <div className="herobannerarea herobannerarea__2 herobannerarea__university">
+      {/* Main Slider */}
+      <Swiper
+        modules={[Navigation, Pagination, Thumbs, Autoplay, EffectFade]}
+        spaceBetween={0}
+        effect="fade"
+        loop={true}
+        speed={1000}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+          el: '.swiper-pagination',
+        }}
+        navigation={{
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        }}
+        thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
+        className="university__slider"
+      >
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id}>
+            <div 
+              className="herobannerarea__single__slider"
+              style={{ 
+                backgroundImage: `url(${slide.bgImage})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                minHeight: '80vh',
+                display: 'flex',
+                alignItems: 'center'
+              }}
+            >
+              <div className="container">
+                <div className="row justify-content-center">
+                  <div className="col-xl-9 col-lg-10 col-md-12 col-sm-12 col-12">
+                    <div className="herobannerarea__content__wraper text-center">
+                      <div className="herobannerarea__title">
+                        <div className="herobannerarea__small__title">
+                          <span>Welcome to Enlight Group of Institutions</span>
+                        </div>
+                        <div 
+                          className="herobannerarea__title__heading__2 herobannerarea__title__heading__3"
+                          dangerouslySetInnerHTML={{ __html: `<h2>${slide.title}</h2>` }}
+                        />
+                      </div>
+                      <div className="hreobannerarea__button__2">
+                        <a 
+                          className="default__button" 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={slide.buttonLink}
+                        >
+                          {slide.buttonText}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-            <div className="herobannerarea__img">
-              <Image
-                src="/assets/img/banner/hero-banner.jpg"
-                alt="Enlight Group campus"
-                width={500}
-                height={350}
-                priority
-              />
-            </div>
-          </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Thumbnail Slider */}
+      <Swiper
+        onSwiper={setThumbsSwiper}
+        spaceBetween={10}
+        slidesPerView={3}
+        watchSlidesProgress
+        className="university__slider__thumb"
+      >
+        {slides.map((slide) => (
+          <SwiperSlide key={`thumb-${slide.id}`}>
+            <Image
+              src={slide.thumb}
+              alt={`Slide ${slide.id}`}
+              width={120}
+              height={80}
+              className="img-fluid"
+              loading="lazy"
+            />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* Navigation Controls */}
+      <div className="slider__controls__wrap slider__controls__pagination slider__controls__arrows">
+        <div className="swiper-button-next arrow-btn">
+          <i className="icofont-long-arrow-right"></i>
         </div>
+        <div className="swiper-button-prev arrow-btn">
+          <i className="icofont-long-arrow-left"></i>
+        </div>
+        <div className="swiper-pagination"></div>
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default HeroBanner;

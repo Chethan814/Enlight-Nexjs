@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react'
 import Image from 'next/image'
-import HeroBanner from './components/home-page-components/HeroBanner'
+import HeroBanner from './components/home-page/HeroBanner'
 import NewsNotices from './components/home-page/NewsNotices'
 import Institutes from './components/home-page/Institutes'
 import CoursesSlider from './components/home-page/CoursesSlider'
