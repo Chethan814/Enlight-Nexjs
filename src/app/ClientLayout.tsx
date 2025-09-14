@@ -7,7 +7,6 @@ import Link from 'next/link';
 // Dynamically import components with no SSR
 const Preloader = dynamic(() => import('./components/Preloader'), { ssr: false });
 const Header = dynamic(() => import('./components/layout-components/Header'), { ssr: false });
-const MobileMenu = dynamic(() => import('./components/MobileMenu'), { ssr: false });
 
 export default function ClientLayout({
   children,

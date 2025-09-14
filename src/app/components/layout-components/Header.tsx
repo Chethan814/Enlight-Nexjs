@@ -33,18 +33,18 @@ const Header = () => {
       name: 'About Us', 
       path: '#',
       submenu: [
-        { name: 'About ELGI', path: '/AboutElgi' },
-        { name: "Director's Message", path: '/DirectorMessage' },
-        { name: "Chairman's Message", path: '/ChairmanMessage' },
-        { name: 'Principal Desk', path: '/PrincipalDesk' }
+        { name: 'About ELGI', path: '/about/AboutElgi' },
+        { name: "Director's Message", path: '/about/DirectorMessage' },
+        { name: "Chairman's Message", path: '/about/ChairmanMessage' },
+        { name: 'Principal Desk', path: '/about/PrincipalDesk' }
       ]
     },
     { 
       name: 'Courses',
       path: '#',
       submenu: [
-        { name: 'Nursing', path: '/nursing' },
-        { name: 'Paramedical', path: '/paramedicals' }
+        { name: 'Nursing', path: '/courses/Nursing' },
+        { name: 'Paramedical', path: '/courses/Paramedicals' }
       ]
     },
     {
@@ -54,29 +54,29 @@ const Header = () => {
         { name: 'Enquiry Now', path: 'https://enlight-enquiry-form.vercel.app', external: true },
         { name: 'Online Admission', path: '#', external: true },
         { name: 'Prospectus Download', path: '/download-pdf' },
-        { name: 'Application Form', path: 'https://enlight.edu.in/public/assets/PDF/Enlight%20Final%202025.pdf', external: true }
+        { name: 'Application Form', path: 'https://enlight.edu.in/public/assets/PDF/Enlight%20Final%25202025.pdf', external: true }
       ]
     },
     {
       name: 'Institutions',
       path: '#',
       submenu: [
-        { name: 'Sowrabha Institute of Nursing Sciences', path: '/sowrabha-institute-of-nursing-sciences' },
-        { name: 'Enlight Institute of Para Medical Sciences', path: '/enlight-institute-of-paramedical-sciences' },
-        { name: 'Enlight School of Nursing', path: '/enlight-school-of-nursing' },
-        { name: 'Sri Shantidhama School of Nursing', path: '/sri-shantidhama-school-of-nursing' }
+        { name: 'Sowrabha Institute of Nursing Sciences', path: 'school/SowrabhaInstitute' },
+        { name: 'Enlight Institute of Para Medical Sciences', path: 'school/EnlightInstitute' },
+        { name: 'Enlight School of Nursing', path: 'school/EnlightSchool' },
+        { name: 'Sri Shantidhama School of Nursing', path: 'school/SantidhamaSchool' }
       ]
     },
     {
       name: 'Campus',
       path: '#',
       submenu: [
-        { name: 'Hostel', path: '/Hostel' },
-        { name: 'Gallery', path: '/gallery' }
+        { name: 'Hostel', path: '/Campus/Hostel' },
+        { name: 'Gallery', path: '/Campus/Gallery' }
       ]
     },
-    { name: 'Facilities', path: '/facilities' },
-    { name: 'Contact', path: '/contacts' }
+    { name: 'Facilities', path: '/Facilities' },
+    { name: 'Contacts', path: '/Contacts' }
   ];
 
   return (
