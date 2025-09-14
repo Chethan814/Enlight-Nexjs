@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 // Dynamically import components with no SSR
 const Preloader = dynamic(() => import('./components/Preloader'), { ssr: false });
-const Header = dynamic(() => import('./components/Header'), { ssr: false });
+const Header = dynamic(() => import('./components/layout-components/Header'), { ssr: false });
 const MobileMenu = dynamic(() => import('./components/MobileMenu'), { ssr: false });
 
 export default function ClientLayout({
@@ -16,8 +16,6 @@ export default function ClientLayout({
 }) {
   const [isLoading, setIsLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openDropdowns, setOpenDropdowns] = useState<string[]>([]);
 
   useEffect(() => {
     setMounted(true);
@@ -29,32 +27,7 @@ export default function ClientLayout({
     return () => clearTimeout(timer);
   }, []);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-    // Toggle body scroll and mobile menu class
-    if (!isMobileMenuOpen) {
-      document.body.classList.add('mobile-menu-open');
-      document.querySelector('.mobile-off-canvas-active')?.classList.add('inside');
-    } else {
-      closeMobileMenu();
-    }
-  };
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-    document.body.classList.remove('mobile-menu-open');
-    document.querySelector('.mobile-off-canvas-active')?.classList.remove('inside');
-    // Close all dropdowns when mobile menu closes
-    setOpenDropdowns([]);
-  };
-
-  const toggleMobileDropdown = (dropdownName: string) => {
-    setOpenDropdowns(prev =>
-      prev.includes(dropdownName)
-        ? prev.filter(name => name !== dropdownName)
-        : [...prev, dropdownName]
-    );
-  };
 
   // Prevent hydration mismatch by not rendering until mounted
   if (!mounted) {
@@ -64,20 +37,13 @@ export default function ClientLayout({
   return (
     <>
       <Preloader isLoading={isLoading} />
-      
+
       <main className="main_wrapper overflow-hidden" style={{ display: isLoading ? 'none' : 'block' }}>
-        <Header onMenuToggle={toggleMobileMenu} />
-        
-        {/* Mobile Menu */}
-        <MobileMenu 
-          isOpen={isMobileMenuOpen}
-          onClose={closeMobileMenu}
-          openDropdowns={openDropdowns}
-          toggleDropdown={toggleMobileDropdown}
-        />
+
+        <Header />
 
         {/* Page Content */}
-        <div className="min-h-screen">
+        <div className="min-h-screen ">
           {children}
         </div>
 
