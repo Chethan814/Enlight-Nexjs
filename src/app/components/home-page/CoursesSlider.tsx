@@ -127,7 +127,14 @@ export default function CoursesSlider({ isClient }: { isClient: boolean }) {
                                     <div className="gridarea__wraper">
                                         <div className="gridarea__img">
                                             <a href={course.link}>
-                                                <img loading="lazy" src={course.img} alt={course.title} />
+                                                <Image 
+                                                  src={course.img} 
+                                                  alt={course.title}
+                                                  width={370}
+                                                  height={250}
+                                                  className="card-img-top img-fluid"
+                                                  priority={idx < 3} // Load first 3 images with priority
+                                                />
                                             </a>
                                             <div className={`gridarea__small__button${course.badge === "Paramedical" ? " gridarea__small__button__1" : ""}`}>
                                                 <div className={`grid__badge${course.badge === "Paramedical" ? " blue__color" : ""}`}>{course.badge}</div>

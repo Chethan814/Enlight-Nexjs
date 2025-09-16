@@ -29,47 +29,84 @@ export default function NewsNotices({ isClient }: { isClient: boolean }) {
           </div>
         </div>
         <div className="row">
-          <div className="col-xl-6 col-lg-6" {...(isClient ? { 'data-aos': 'fade-up' } : {})}>
-            <div className="blogarea__content__wraper__scroll">
-              <div><h3>News</h3></div>
-              <div className="blogarea__content__wraper">
-                {newsList.map((news, idx) => (
-                  <div className="blogarea__text__wraper" key={idx}>
-                    <div className="blogarea__img">
-                      <div className="blogarea__date">
-                        <i className="icofont-news"></i>
+          {/* News Section */}
+          <div className="col-xl-8 col-lg-8 col-md-12">
+            <div className="section__title__button d-flex justify-content-between align-items-center mb-4">
+              <h3 className="h4">Latest News</h3>
+              <a href="/news" className="btn btn-link p-0">View All News</a>
+            </div>
+            <div className="row">
+              {newsList.map((news, index) => (
+                <div key={index} className="col-lg-6 col-md-6 mb-4">
+                  <div className="card h-100 border-0 shadow-sm">
+                    <div className="card-body">
+                      <div className="d-flex">
+                        <div className="flex-shrink-0 me-3">
+                          <div className="bg-light p-2 rounded">
+                            <Image 
+                              src="/assets/img/icon/news-icon.svg" 
+                              alt="News icon"
+                              width={40}
+                              height={40}
+                              className="img-fluid"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <h5 className="h6 mb-1">
+                            <a href="#" className="text-decoration-none">
+                              {news.title}
+                            </a>
+                          </h5>
+                          <p className="small text-muted mb-0">
+                            <i className="far fa-calendar-alt me-1"></i> {news.date}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                    <div className="blogarea__para">
-                      <p>{news.title}</p>
-                      <p className="align-items-center d-flex gap-2">
-                        <span><i className="icofont-calendar text-primary"></i></span>{news.date}
-                      </p>
-                    </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
-          <div className="col-xl-6 col-lg-6" {...(isClient ? { 'data-aos': 'fade-up' } : {})}>
-            <div className="blogarea__content__wraper__scroll">
-              <div><h3>Notices</h3></div>
-              <div className="blogarea__content__wraper">
-                {noticeList.map((notice, idx) => (
-                  <div className="blogarea__text__wraper" key={idx}>
-                    <div className="blogarea__img new-gif-size">
-                      <div className="blogarea__date">
-                        <img src="/assets/img/newgif.gif" alt="new-notice-image" />
+
+          {/* Notices Section */}
+          <div className="col-xl-4 col-lg-4 col-md-12">
+            <div className="section__title__button d-flex justify-content-between align-items-center mb-4">
+              <h3 className="h4">Notices</h3>
+              <a href="/notices" className="btn btn-link p-0">View All</a>
+            </div>
+            <div className="card border-0 shadow-sm">
+              <div className="card-body p-0">
+                <ul className="list-group list-group-flush">
+                  {noticeList.map((notice, index) => (
+                    <li key={index} className="list-group-item border-0 border-bottom">
+                      <div className="d-flex">
+                        <div className="flex-shrink-0 me-3">
+                          <div className="bg-light p-2 rounded">
+                            <Image 
+                              src="/assets/img/icon/notice-icon.svg" 
+                              alt="Notice icon"
+                              width={24}
+                              height={24}
+                              className="img-fluid"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <h6 className="mb-1">
+                            <a href="#" className="text-decoration-none">
+                              {notice.title}
+                            </a>
+                          </h6>
+                          <p className="small text-muted mb-0">
+                            <i className="far fa-calendar-alt me-1"></i> {notice.date}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <div className="blogarea__para">
-                      <p>{notice.title}</p>
-                      <p className="align-items-center d-flex gap-2">
-                        <span><i className="icofont-calendar text-primary"></i></span>{notice.date}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

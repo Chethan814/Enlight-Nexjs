@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 
 interface Institute {
   img: string
@@ -55,7 +56,13 @@ export default function Institutes({ isClient }: { isClient: boolean }) {
             >
               <div className="single__blog__wraper">
                 <div className="single__blog__img">
-                  <img loading="lazy" src={inst.img} alt="Institute" />
+                  <Image 
+                    src={inst.img} 
+                    alt={inst.name}
+                    width={370}
+                    height={250}
+                    className="img-fluid"
+                  />
                 </div>
                 <div className="single__blog__content">
                   <p>Enlight Group of Institutions</p>

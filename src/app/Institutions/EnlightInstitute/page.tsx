@@ -127,12 +127,12 @@ const EnlightInstitute = () => {
                     The Enlight Education Trust started in the year of Nov 2015 by keeping a broad objective of 
                     imparting high-quality education through improving oneself and the nation at large. Through 
                     well-organized packages, we are successful in providing standard education to the students. 
-                    Providing trustworthy services with minimum expense was always our trademark … We worked to 
-                    enlighten our students' lives by making valuable contributions to their academic, and 
+                    Providing trustworthy services with minimum expense was always our trademark. We worked to 
+                    enlighten our students&apos; lives by making valuable contributions to their academic, and 
                     non-academic side by providing assistance in their studies, getting better placements, and 
                     overall bringing them as useful citizens to the nation. All this we made real only by the 
                     coordinated practices, having experienced faculties, and putting 100% loyalty into work... 
-                    that's why we believe together we can succeed.
+                    that&apos;s why we believe together we can succeed.
                   </p>
                 </div>
 

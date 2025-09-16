@@ -52,7 +52,14 @@ export default function Courses() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12" data-aos="fade-up">
               <div className="coursesarea__single">
                 <div className="coursesarea__single__img">
-                  <img loading="lazy" src="/assets/img/courses/bsc-nursing.jpg" alt="BSc Nursing" />
+                  <Image 
+                    src="/assets/img/courses/bsc-nursing.jpg" 
+                    alt="BSc Nursing"
+                    width={370}
+                    height={250}
+                    className="img-fluid"
+                    priority
+                  />
                   <div className="coursesarea__single__img__overlay">
                     <span className="coursesarea__single__img__overlay__badge">UG</span>
                   </div>
@@ -92,7 +99,13 @@ export default function Courses() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12" data-aos="fade-up">
               <div className="coursesarea__single">
                 <div className="coursesarea__single__img">
-                  <img loading="lazy" src="/assets/img/courses/gnm.jpg" alt="GNM" />
+                  <Image 
+                    src="/assets/img/courses/gnm.jpg" 
+                    alt="GNM"
+                    width={370}
+                    height={250}
+                    className="img-fluid"
+                  />
                   <div className="coursesarea__single__img__overlay">
                     <span className="coursesarea__single__img__overlay__badge">Diploma</span>
                   </div>
@@ -132,7 +145,13 @@ export default function Courses() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12" data-aos="fade-up">
               <div className="coursesarea__single">
                 <div className="coursesarea__single__img">
-                  <img loading="lazy" src="/assets/img/courses/msc-nursing.jpg" alt="MSc Nursing" />
+                  <Image 
+                    src="/assets/img/courses/msc-nursing.jpg" 
+                    alt="MSc Nursing"
+                    width={370}
+                    height={250}
+                    className="img-fluid"
+                  />
                   <div className="coursesarea__single__img__overlay">
                     <span className="coursesarea__single__img__overlay__badge">PG</span>
                   </div>
@@ -171,7 +190,13 @@ export default function Courses() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12" data-aos="fade-up">
               <div className="coursesarea__single">
                 <div className="coursesarea__single__img">
-                  <img loading="lazy" src="/assets/img/courses/paramedical.jpg" alt="Paramedical" />
+                  <Image 
+                    src="/assets/img/courses/paramedical.jpg" 
+                    alt="Paramedical"
+                    width={370}
+                    height={250}
+                    className="img-fluid"
+                  />
                   <div className="coursesarea__single__img__overlay">
                     <span className="coursesarea__single__img__overlay__badge">Diploma</span>
                   </div>
@@ -210,7 +235,13 @@ export default function Courses() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12" data-aos="fade-up">
               <div className="coursesarea__single">
                 <div className="coursesarea__single__img">
-                  <img loading="lazy" src="/assets/img/courses/anm.jpg" alt="ANM" />
+                  <Image 
+                    src="/assets/img/courses/anm.jpg" 
+                    alt="ANM"
+                    width={370}
+                    height={250}
+                    className="img-fluid"
+                  />
                   <div className="coursesarea__single__img__overlay">
                     <span className="coursesarea__single__img__overlay__badge">Certificate</span>
                   </div>
@@ -249,7 +280,13 @@ export default function Courses() {
             <div className="col-xl-4 col-lg-4 col-md-6 col-sm-12" data-aos="fade-up">
               <div className="coursesarea__single">
                 <div className="coursesarea__single__img">
-                  <img loading="lazy" src="/assets/img/courses/short-term.jpg" alt="Short Term Courses" />
+                  <Image 
+                    src="/assets/img/courses/short-term.jpg" 
+                    alt="Short Term Courses"
+                    width={370}
+                    height={250}
+                    className="img-fluid"
+                  />
                   <div className="coursesarea__single__img__overlay">
                     <span className="coursesarea__single__img__overlay__badge">Certificate</span>
                   </div>

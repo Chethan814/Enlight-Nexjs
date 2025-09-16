@@ -6,6 +6,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import Script from 'next/script';
+import styles from './Header.module.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -81,18 +84,12 @@ const Header = () => {
 
   return (
     <>
-      {/* Required CSS */}
-      <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-      <link rel="stylesheet" href="/assets/css/icofont.min.css" />
-      <link rel="stylesheet" href="/assets/css/style.css" />
-      <link rel="stylesheet" href="/assets/css/responsive.css" />
-
       {/* Top Bar */}
-      <div className="topbararea">
+      <div className={styles.topbararea}>
         <div className="container">
           <div className="row">
             <div className="col-xl-6 col-lg-6">
-              <div className="topbar__left">
+              <div className={styles.topbar__left}>
                 <ul>
                   <li>
                     <i className="icofont-phone"></i> +91-8029556773
@@ -104,8 +101,8 @@ const Header = () => {
               </div>
             </div>
             <div className="col-xl-6 col-lg-6">
-              <div className="topbar__right">
-                <div className="topbar__text">
+              <div className={styles.topbar__right}>
+                <div className={styles.topbar__text}>
                   <div className="row justify-content-end">
                     <div className="col-sm-auto">
                       <div className="login-buttons">
@@ -139,7 +136,7 @@ const Header = () => {
                     </div>
                   </div>
                 </div>
-                <div className="topbar__list">
+                <div className={styles.topbar__list}>
                   <ul>
                     <li>
                       <a href="https://www.facebook.com/sovamjamatiaofficial" target="_blank" rel="noopener noreferrer" title="Facebook">
@@ -175,8 +172,8 @@ const Header = () => {
           <div className="container desktop__menu__wrapper">
             <div className="row">
               <div className="col-xl-2 col-lg-2 col-md-6">
-                <div className="headerarea__left">
-                  <div className="headerarea__left__logo">
+                <div className={styles.headerarea__left}>
+                  <div className={styles.headerarea__left__logo}>
                     <Link href="/">
                       <Image 
                         src="/assets/img/logo/enlight-group-logo.png" 
@@ -191,17 +188,17 @@ const Header = () => {
               </div>
               
               <div className="col-xl-10 col-lg-10 main_menu_wrap">
-                <div className="headerarea__main__menu">
+                <div className={styles.headerarea__main__menu}>
                   <nav>
                     <ul className="d-flex align-items-center justify-content-end">
                       {navItems.map((item) => (
                         <li key={item.name} className={item.submenu ? 'has-dropdown' : ''}>
                           {item.submenu ? (
                             <>
-                              <a className="headerarea__has__dropdown">
+                              <a className={styles.headerarea__has__dropdown}>
                                 {item.name} <i className="icofont-rounded-down"></i>
                               </a>
-                              <ul className="headerarea__submenu">
+                              <ul className={styles.headerarea__submenu}>
                                 {item.submenu.map((subItem) => (
                                   <li key={subItem.name}>
                                     {subItem.external ? (
@@ -237,7 +234,7 @@ const Header = () => {
           <div className="container-fluid mob_menu_wrapper">
             <div className="row align-items-center">
               <div className="col-6">
-                <div className="mobile-logo">
+                <div className={styles.mobile_logo}>
                   <Link href="/">
                     <Image 
                       src="/assets/img/logo/enlight-group-logo.png" 
@@ -250,10 +247,10 @@ const Header = () => {
                 </div>
               </div>
               <div className="col-6">
-                <div className="header-right-wrap">
-                  <div className="mobile-off-canvas">
+                <div className={styles.header_right_wrap}>
+                  <div className={styles.mobile_off_canvas}>
                     <button 
-                      className="mobile-aside-button" 
+                      className={styles.mobile_aside_button} 
                       onClick={toggleMobileMenu}
                       aria-label="Toggle menu"
                     >
@@ -270,17 +267,17 @@ const Header = () => {
       {/* Mobile Menu */}
       <div className={`mobile-off-canvas-active ${isMobileMenuOpen ? 'inside' : ''}`}>
         <button 
-          className="mobile-aside-close" 
+          className={styles.mobile_aside_close} 
           onClick={toggleMobileMenu}
           aria-label="Close menu"
         >
           <i className="icofont-close-line"></i>
         </button>
-        <div className="header-mobile-aside-wrap">
-          <div className="mobile-menu-wrap headerarea">
-            <div className="mobile-navigation">
+        <div className={styles.header_mobile_aside_wrap}>
+          <div className={styles.mobile_menu_wrap}>
+            <div className={styles.mobile_navigation}>
               <nav>
-                <ul className="mobile-menu">
+                <ul className={styles.mobile_menu}>
                   {navItems.map((item) => (
                     <li 
                       key={`mobile-${item.name}`} 
@@ -298,7 +295,7 @@ const Header = () => {
                           }}>
                             {item.name} <i className="icofont-thin-down"></i>
                           </a>
-                          <ul className="dropdown">
+                          <ul className={styles.dropdown}>
                             {item.submenu.map((subItem) => (
                               <li key={subItem.name}>
                                 {subItem.external ? (
@@ -325,8 +322,8 @@ const Header = () => {
               </nav>
             </div>
             
-            <div className="mobile-curr-lang-wrap">
-              <div className="single-mobile-curr-lang">
+            <div className={styles.mobile_curr_lang_wrap}>
+              <div className={styles.single_mobile_curr_lang}>
                 <a 
                   className={`mobile-account-active ${isAccountMenuOpen ? 'active' : ''}`} 
                   onClick={toggleAccountMenu}
@@ -363,7 +360,7 @@ const Header = () => {
               </div>
             </div>
             
-            <div className="mobile-social-wrap">
+            <div className={styles.mobile_social_wrap}>
               <a 
                 href="https://www.facebook.com/enlightgroup2020" 
                 target="_blank" 
@@ -395,8 +392,8 @@ const Header = () => {
 
       {/* Theme Shadow */}
       <div>
-        <div className="theme__shadow__circle"></div>
-        <div className="theme__shadow__circle shadow__right"></div>
+        <div className={styles.theme__shadow__circle}></div>
+        <div className={styles.theme__shadow__circle + ' ' + styles.shadow__right}></div>
       </div>
 
       {/* Required JavaScript */}

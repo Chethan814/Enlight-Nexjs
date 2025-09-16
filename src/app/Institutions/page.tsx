@@ -3,15 +3,21 @@
 import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import dynamic from 'next/dynamic';
+
+// Dynamically import AOS with SSR disabled
+const AOS = dynamic(() => import('aos').then(mod => mod.default), {
+  ssr: false
+});
 
 export default function School() {
   useEffect(() => {
+    // Initialize AOS when component mounts
     if (typeof window !== 'undefined') {
-      const AOS = require('aos')
       AOS.init({
         duration: 1000,
         once: true
-      })
+      });
     }
   }, [])
 

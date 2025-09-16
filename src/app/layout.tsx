@@ -1,24 +1,22 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Script from 'next/script'
-import ClientLayout from './ClientLayout'
-import './globals.css'
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import Script from 'next/script';
+import ClientLayout from './ClientLayout';
 import '../../public/assets/css/style.css'
-import '../../public/assets/css/animate.min.css'
-import '../../public/assets/css/aos.min.css'
-import '../../public/assets/css/bootstrap.min.css'
-import '../../public/assets/css/icofont.min.css'
-import '../../public/assets/css/magnific-popup.css'
-
-import '../../public/assets/css/slick.css'
-import '../../public/assets/css/swiper-bundle.min.css'
+import './globals.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'aos/dist/aos.css';
+import 'swiper/css/bundle';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 
 const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter'
-})
+});
 
 export const metadata: Metadata = {
   title: 'Enlight Group of Institutions - Nursing & Paramedical Education',
@@ -36,92 +34,44 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Enlight Group of Institutions - Nursing & Paramedical Education',
-    description: 'Direct admission for Nursing and Paramedical courses. BSc Nursing, GNM, Medical Laboratory Technology, Medical Imaging, and more.',
-    images: ['/assets/img/logo/enlight-group-logo.png'],
   },
-  icons: {
-    icon: [
-      { url: '/cropped-Logo-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/cropped-Logo-180x180.png', sizes: '180x180', type: 'image/png' },
-      { url: '/cropped-Logo-192x192.png', sizes: '192x192', type: 'image/png' },
-    ],
-    apple: '/cropped-Logo-192x192.png',
-  },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en">
       <head>
-        <meta charSet="utf-8" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="Enlight Group of Institutions - Leading provider of Nursing and Paramedical education with direct admission opportunities." />
-        <meta name="keywords" content="nursing admission, paramedical courses, BSc nursing, GNM, medical laboratory technology, medical imaging, medical anesthesia technology, direct admission, healthcare education" />
-        <meta name="author" content="Enlight Group of Institutions" />
-        <meta name="robots" content="index, follow" />
-
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://enlight.eduwego.in/" />
-        <meta property="og:title" content="Enlight Group of Institutions - Nursing & Paramedical Education" />
-        <meta property="og:description" content="Direct admission for Nursing and Paramedical courses. BSc Nursing, GNM, Medical Laboratory Technology, Medical Imaging, and more." />
-        <meta property="og:image" content="/assets/img/logo/enlight-group-logo.png" />
-
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://enlight.eduwego.in/" />
-        <meta property="twitter:title" content="Enlight Group of Institutions - Nursing & Paramedical Education" />
-        <meta property="twitter:description" content="Direct admission for Nursing and Paramedical courses. BSc Nursing, GNM, Medical Laboratory Technology, Medical Imaging, and more." />
-        <meta property="twitter:image" content="/assets/img/logo/enlight-group-logo.png" />
-
-        <title>Enlight Group of Institutions - Nursing & Paramedical Education</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/cropped-Logo-180x180.png" />
-
-        {/* Bootstrap and Core CSS Files - Load First */}
-        <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="/assets/css/style.css" />
-
-        {/* Plugin CSS Files */}
-        <link rel="stylesheet" href="/assets/css/animate.min.css" />
-        <link rel="stylesheet" href="/assets/css/aos.min.css" />
-        <link rel="stylesheet" href="/assets/css/magnific-popup.css" />
-        <link rel="stylesheet" href="/assets/css/icofont.min.css" />
-        <link rel="stylesheet" href="/assets/css/slick.css" />
-        <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" />
+        <Script 
+          id="aos-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener('DOMContentLoaded', function() {
+                AOS.init({
+                  duration: 800,
+                  easing: 'ease-in-out',
+                  once: true,
+                  mirror: false
+                });
+              });
+            `,
+          }}
+        />
       </head>
-      <body className={inter.variable}>
+      <body className={`${inter.variable} font-sans`}>
         <ClientLayout>
-            {children}
+          {children}
         </ClientLayout>
-
-        {/* Core JavaScript Dependencies - Load in order */}
-        <Script src="https://code.jquery.com/jquery-3.7.1.min.js" />
-        <Script src="/assets/js/popper.min.js" />
-        <Script src="/assets/js/bootstrap.min.js" />
-        <Script src="/assets/js/swiper-bundle.min.js" />
-        <Script src="/assets/js/wow.min.js" />
-        <Script src="/assets/js/waypoints.min.js" />
-        <Script src="/assets/js/jquery.counterup.min.js" />
-        <Script src="/assets/js/jquery.meanmenu.min.js" />
-        <Script src="/assets/js/jquery.scrollUp.min.js" />
-        <Script src="/assets/js/imagesloaded.pkgd.min.js" />
-        <Script src="/assets/js/isotope.pkgd.min.js" />
-        <Script src="/assets/js/jquery.magnific-popup.min.js" />
-        <Script src="/assets/js/slick.min.js" />
-        <Script src="/assets/js/plugin_plyr.js" />
-        <Script src="/assets/js/plugins.js" />
-        <Script src="/assets/js/ajax-form.js" />
-
-        {/* Main JavaScript - Load last */}
-        <Script src="/assets/js/main.js" />
       </body>
     </html>
-  )
+  );
 }
